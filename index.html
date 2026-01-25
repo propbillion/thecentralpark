@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Runwal The Central Park - 26 Acre Living with 2, 3 & 4 BHK Spacious Homes starting at ₹78 Lacs. Pre-register for 1 Lakh discount.">
+    <title>Runwal The Central Park | Premium Homes in Pune</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
+</head>
+
+<body>
+
+    <!-- Fixed Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <div class="logo-left">
+                <div class="logo-box">
+                    <span class="logo-text">THE<br>CENTRAL<br>PARK</span>
+                </div>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="logo-right">
+                <div class="logo-runwal">
+                    <!-- <span class="logo-r">R</span>
+                    <span class="logo-runwal-text">RUNWAL</span>
+                    <span class="logo-tagline">Walk into dreams</span> -->
+                    <img src="assets/logo.jpeg" alt="logo" width="70
+                    ">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Fixed Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#master-plan" class="nav-link">Master Plan</a>
+            <a href="#final-price" class="nav-link">Final Price</a>
+            <a href="#floor-plans" class="nav-link">Tower Plans</a>
+            <a href="#available-units" class="nav-link">Available Units</a>
+            <a href="#e-brochure" class="nav-link">E-Brochure</a>
+            <a href="#location" class="nav-link">Location</a>
+        </div>
+    </nav>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+            <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">&times;</button>
+            <nav class="sidebar-nav">
+                <a href="#hero" class="sidebar-link">Home</a>
+                <a href="#master-plan" class="sidebar-link">Master Plan</a>
+                <a href="#final-price" class="sidebar-link">Final Price</a>
+                <a href="#floor-plans" class="sidebar-link">Tower Plans</a>
+                <a href="#available-units" class="sidebar-link">Available Units</a>
+                <a href="#e-brochure" class="sidebar-link">E-Brochure</a>
+                <a href="#location" class="sidebar-link">Location</a>
+            </nav>
+        </div>
+    </div>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Hero Section with Overlay -->
+        <section class="hero" id="hero">
+            <div class="hero-image">
+                <img src="assets/img1.jpeg" alt="The Central Park Landscape" loading="eager">
+                <div class="hero-watermark">R</div>
+            </div>
+
+            <!-- Hero Overlay Content -->
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <div class="hero-buttons" style="flex-direction: row;justify-content: space-between;">
+                        <button class="hero-btn" id="floorPlansCTABtn">
+                            <span class="btn-icon">📄</span>
+                            <span>Floor Plans</span>
+                        </button>
+
+                        <button class="hero-btn" id="getTokenNoBtn">
+                            <span class="btn-icon">📋</span>
+                            <span>Discount Code</span>
+                        </button>
+                    </div>
+                    <h1 class="hero-title">RUNWAL<br><span class="hero-subtitle">THE CENTRAL PARK |
+                            Pimpri-Chinchwad | PCMC</span></h1>
+
+
+                    <div class="hero-launch">
+                        <!-- <p class="launch-text"><em>Pre-Launch 2025-26</em></p> -->
+                        <p class="launch-detail">2026 - SKY CLUB EDITION</p>
+                        <p class="launch-price"></p>
+                    </div>
+
+
+                    <div class="hero-buttons">
+                        <button class="hero-btn" id="costSheetHeroBtn">
+                            <span class="btn-icon">📄</span>
+                            <span>Cost Sheet</span>
+                        </button>
+
+                        <button class="hero-btn" id="paymentScheduleBtn">
+                            <span class="btn-icon">📋</span>
+                            <span>Payment Schedule</span>
+                        </button>
+
+                        <button class="hero-btn" id="brochureHeroBtn">
+                            <span class="btn-icon">📕</span>
+                            <span>Brochure</span>
+                        </button>
+                    </div>
+
+                    <div class="hero-plans">
+                        <button class="plan-btn" id="floorPlansBtn">
+                            <span class="btn-icon">🏠</span>
+                            <!-- <span>New Tower / Master / Floor / Refuge / Unit Plan (With Dimensions)</span> -->
+                        </button>
+                    </div>
+
+                    <div class="hero-cta">
+                        <!-- <p class="cta-detail">2 3, 3.5 & 4 BHK Homes</p>
+                        <p class="token-gold">Gold Token - Refundable 💰</p>
+                        <p class="token-platinum">Platinum Token - Non-Refundable (Unit selection)</p> -->
+
+                        <div class="token-prices">
+                            <p class="price-item">🏠 2 BHK - 860 SQFT ✅</p>
+                            <p class="price-item">🏠 3 BHK - 1314 SQFT ✅</p>
+                            <p class="price-item">🏠 3.5 BHK - 1550 SQFT ✅</p>
+                            <p class="price-item">🏠 4 BHK - 1720 SQFT ✅</p>
+                            <p class="price-item">🏠 4.5 BHK - 2060 SQFT ✅</p>
+
+                            <p class="price-item">🏠 5 BHK Class - 3100 SQFT ✅</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Site Visit Banner -->
+        <section class="site-visit-banner">
+            <div class="container">
+                <span class="site-visit-text">PRE LAUNCH 2026</span>
+                <button class="btn-schedule" id="scheduleVisitBtn">Schedule Visit</button>
+            </div>
+        </section>
+
+        <!-- Project Overview -->
+        <section class="project-overview">
+            <div class="container" style="padding: 0rem;">
+                <div class="project-brand">
+                    <!-- <h1 class="brand-name">RUNWAL </h1> -->
+                    <h1 class="brand-name">LIMITED </h1>
+                    <div style="    display: flex;
+    flex-direction: row;
+    justify-content: space-between;">
+                        <!-- <h2 class="project-name">THE CENTRAL PARK </h2> -->
+                        <h2 class="project-name">UNITS AVAILABLE </h2>
+                        <span class="selling-fast">Selling Fast, Enquire now.</span>
+                        <button class="btn-schedule" id="scheduleVisitBtn">Enquire Now</button>
+
+                    </div>
+                </div>
+
+                <div class="project-stats">
+                    <div class="stat-row">
+                        <span class="stat-item"><span class="stat-dash">—</span> 26 Acre Living</span>
+                        <span class="stat-separator">-</span>
+                        <span class="stat-item">14 Towers</span>
+                        <span class="stat-separator">-</span>
+                        <span class="stat-item">40 - 50 Floors</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-item"><span class="stat-dash">—</span> 100+ Lifestyle Amenities</span>
+                        <span class="stat-separator">-</span>
+                        <span class="stat-item">70% Open Space</span>
+                    </div>
+                </div>
+
+                <div class="project-type">
+                    <h3>Pre Launch Ending in 7days..</h3>
+                    <img src="https://i.postimg.cc/SNcBh82S/Whats-App-Image-2026-01-23-at-18-10-36.jpg"
+                        alt="Pre Launch Visual" style="width:100%; margin-top:12px; border-radius:8px;">
+
+
+                </div>
+
+                <p class="project-tagline">
+                    Experience Sky-Club on 50 Floors at <strong style="color: #c9973e;
+    font-size: 20px;">RUNWAL</strong> <span style="color:#0f3d2f;">THE CENTRAL PARK</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing-section">
+            <div class="container">
+                <div class="price-display">
+                    <h2 class="price">₹1.15 Cr+<span class="asterisk">*</span></h2>
+                    <button class="btn-gold" id="downloadCostSheetBtn">Download Cost Sheet</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pre-Registration Form -->
+        <section class="pre-registration">
+            <div class="container">
+                <h3 class="form-title">Pre-Register and get upto 1-LAKH discount</h3>
+                <form class="registration-form" id="preRegisterForm">
+                    <input type="text" id="name" name="name" placeholder="Name" required minlength="2"
+                        class="form-input">
+                    <div class="phone-input-wrapper">
+                        <span class="phone-prefix">🇮🇳 +91</span>
+                        <input type="tel" id="mobile" name="mobile" placeholder="Mobile No" required pattern="[0-9]{10}"
+                            maxlength="10" class="form-input phone-input">
+                    </div>
+                    <p class="form-privacy">Your details are safe with us.</p>
+                    <button type="submit" class="btn-gold btn-submit">Pre-Register Now</button>
+                </form>
+            </div>
+        </section>
+        <img src="https://i.postimg.cc/fyQ6xMqM/Whats-App-Image-2026-01-24-at-18-27-59.jpg" alt="Project Image"
+            style="width:100%; max-width:100%; display:block; margin:16px auto; border-radius:10px;">
+
+        <img src="https://i.postimg.cc/K8x8SmzM/Chat-GPT-Image-Jan-23-2026-06-19-24-PM.png"
+            alt="Runwal The Central Park"
+            style="width:100%; max-width:100%; border-radius:12px; display:block; margin:16px auto;">
+        <img src="https://i.postimg.cc/3xfTncLB/Chat-GPT-Image-Jan-23-2026-07-08-45-PM.png"
+            alt="Project Preview - Runwal The Central Park"
+            style="width:100%; max-width:100%; display:block; margin:1rem auto; border-radius:8px;">
+        <section class="pre-registration">
+            <div class="container">
+
+                <img src="https://i.postimg.cc/9FxKhqGq/Gemini-Generated-Image-bp64lvbp64lvbp64.png"
+                    alt="Runwal The Central Park Visual"
+                    style="width:100%; max-width:100%; display:block; margin:1rem auto; border-radius:8px;">
+
+                <!-- Google Form iframe below -->
+            </div>
+        </section>
+        <img src="https://i.postimg.cc/sfTwQC1p/Whats-App-Image-2026-01-23-at-21-41-22.jpg"
+            alt="Runwal The Central Park Preview"
+            style="width:100%; max-width:100%; display:block; margin:1rem auto; border-radius:8px;">
+
+
+        <img src="https://i.postimg.cc/wBxkTWHZ/Whats-App-Image-2026-01-23-at-17-48-22.jpg"
+            alt="Runwal The Central Park"
+            style="width:100%; max-width:100%; display:block; margin:1rem auto; border-radius:8px;">
+        <section class="section" id="SKY-CLUB Floor Plan">
+            <div class="container" style="padding: 0rem; text-align: center;">
+                <h2 class="section-title">SKY-CLUB Floor Plan</h2>
+
+                <div class="SKY-CLUB Floor Plan-card">
+                    <div class="plan-image">
+                        <img src="https://i.postimg.cc/d1zc02KM/Whats-App-Image-2026-01-24-at-19-03-04.jpg"
+                            alt="SKY-CLUB Floor Plan Layout">
+                    </div>
+                    <button class="btn-gold btn-view">View SKY-CLUB Plan</button>
+                </div>
+
+
+                <!-- Master Plan Section -->
+                <section class="section" id="master-plan">
+                    <div class="container" style="padding: 0rem; text-align: center;">
+                        <h2 class="section-title">MASTER PLAN</h2>
+
+                        <div class="master-plan-card">
+                            <div class="plan-image">
+                                <img src="https://i.postimg.cc/6pSw8xKV/Whats-App-Image-2026-01-24-at-18-36-53.jpg"
+                                    alt="Master Plan Layout">
+                            </div>
+                            <button class="btn-gold btn-view">View Now</button>
+                        </div>
+
+                        <div class="highlights-section">
+                            <h3 class="highlights-title">PROJECT HIGHLIGHTS</h3>
+                            <ul class="highlights-list">
+                                <li>Sky-ClubHouse on 50 Floor | 18 Lifts</li>
+                                <li>100+ engaging amenities | R-Restautant on 50 Floor</li>
+                                <li>4 lakh sq. ft. of recreational grounds</li>
+                                <li>55,000+ sq. ft clubhouse Delivered - The R Club</li>
+                            </ul>
+                        </div>
+
+                        <div class="highlights-section">
+                            <h3 class="highlights-title">RESIDENTIAL HIGHLIGHTS</h3>
+                            <ul class="highlights-list">
+                                <li>13-acre residential cluster</li>
+                                <li>8.5-acres of open spaces</li>
+                                <li>2, 3 , 4 , 4.5 & 5.5 Bhk Master Community</li>
+                                <li>12 towers</li>
+                                <li>45-50 storey towers</li>
+                                <li>360° panoramic views</li>
+                            </ul>
+                        </div>
+
+                        <button class="btn-gold">Download Brochure</button>
+                    </div>
+                </section>
+
+                <!-- Costing Section -->
+                <section class="section" id="final-price">
+                    <div class="container" style="padding: 0rem; text-align: center;">
+                        <h2 class="section-title">COSTING</h2>
+
+                        <div class="costing-header">
+                            <h3>Consideration Values :</h3>
+                        </div>
+
+                        <div class="pricing-card">
+                            <div class="pricing-info">
+                                <h4>2 BHK Large</h4>
+                                <p>Carpet Area - 860 sqft</p>
+                                <p class="price-text">1.15 Cr<span class="asterisk">*</span> (Negotiable)</p>
+                            </div>
+                            <button class="btn-gold">Price break-up</button>
+                        </div>
+
+                        <div class="pricing-card">
+                            <div class="pricing-info">
+                                <h4>3 BHK Large</h4>
+                                <p>Carpet area - 1314 sqft</p>
+                                <p class="price-text">1.89 Cr<span class="asterisk">*</span> ( Negotiable )</p>
+                            </div>
+                            <button class="btn-gold">Price break-up</button>
+                        </div>
+
+                        <div class="pricing-card">
+                            <div class="pricing-info">
+                                <h4>3.5 BHK (With Servant Room & Restroom)</h4>
+                                <p>Carpet area - 1550 sqft</p>
+                                <p class="price-text">2.24 Cr<span class="asterisk">*</span> (Negotiable)</p>
+                            </div>
+                            <button class="btn-gold">Price break-up</button>
+                        </div>
+
+                        <div class="pricing-card">
+                            <div class="pricing-info">
+                                <h4>4 BHK </h4>
+                                <p>Carpet area - 1725 sqft</p>
+                                <p class="price-text">2.29 cr<span class="asterisk">*</span> (Negotiable)</p>
+                            </div>
+                            <button class="btn-gold">Price break-up</button>
+                        </div>
+
+                        <div class="pricing-card">
+                            <div class="pricing-info">
+                                <h4>4.5 BHK (With Servant Room & Restroom)</h4>
+                                <p>Carpet Area - 2060 sqft<span class="asterisk">*</span></p>
+                                <p class="price-text">3.09cr onwards +</p>
+                            </div>
+                            <button class="btn-gold">Price break-up</button>
+                        </div>
+
+                        <div class="pricing-card">
+                            <div class="pricing-info">
+                                <h4>5 BHK Class (With Servant Room & Restroom)</h4>
+                                <p>Carpet Area - 3100 sqft</p>
+                                <p class="price-text">4.63 cr onwards +</p>
+                            </div>
+                            <button class="btn-gold">Price break-up</button>
+                        </div>
+
+                        <div class="cost-sheet-preview">
+                            <img src="https://i.postimg.cc/mkZKdmRL/Whats-App-Image-2026-01-24-at-18-42-27.jpg"
+                                alt="Complete Cost Sheet">
+                            <div class="cost-sheet-overlay">
+                                <button class="btn-gold">COMPLETE COST SHEET</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Floor Plans Section -->
+                <section class="section" id="floor-plans">
+                    <div class="container" style="padding: 0rem; text-align: center;">
+                        <h2 class="section-title">FLOOR PLANS</h2>
+
+                        <div class="floor-plan-card whatsapp-cta" data-plan="2 & 3 BHK Floor Plan">
+                            <img src="https://i.postimg.cc/VvNH95Br/Whats-App-Image-2026-01-24-at-18-36-53-(1).jpg"
+                                alt="2 & 3 BHK Floor Plan">
+                            <button class="floor-btn">2 & 3 - BHK Floor Plan</button>
+                        </div>
+
+                        <div class="floor-plan-card whatsapp-cta" data-plan="3 & 3.5 BHK Floor Plan">
+                            <img src="https://i.postimg.cc/xdysWL6c/Whats-App-Image-2026-01-24-at-18-36-54.jpg"
+                                alt="3 & 3.5 BHK Floor Plan">
+                            <button class="floor-btn">3 | 3.5 - BHK Floor Plan</button>
+                        </div>
+
+                        <div class="floor-plan-card whatsapp-cta" data-plan="4 | 4.5 | 5 BHK Floor Plan">
+                            <img src="https://i.postimg.cc/c4gFdpDZ/Whats-App-Image-2026-01-24-at-18-38-40.jpg"
+                                alt="4 , 4.5 & 5 BHK Floor Plan">
+                            <button class="floor-btn">4 | 4.5 | 5 - BHK Floor Plan</button>
+                        </div>
+
+                </section>
+
+                <!-- Amenities Section -->
+                <section class="section amenities-section">
+                    <div class="container">
+                        <h2 class="section-title-split">PROJECT <span class="gold">AMENITIES</span></h2>
+
+                        <h3 class="amenities-subtitle">INDOOR</h3>
+                        <div class="amenities-grid">
+                            <div class="amenity-item">
+                                <span class="amenity-icon">👶</span>
+                                <span>Daycare</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="amenity-icon">🏋️</span>
+                                <span>Gymnasium</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="amenity-icon">🏢</span>
+                                <span>Multipurpose hall</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="amenity-icon">☕</span>
+                                <span>Cafe</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="amenity-icon">🏸</span>
+                                <span>Badminton court</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="amenity-icon">🎾</span>
+                                <span>Squash court</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="amenity-icon">🎭</span>
+                                <span>Mini theatre</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="amenity-icon">🏊</span>
+                                <span>Swimming pool , etc and many many more, download brochure to know more.</span>
+                            </div>
+                        </div>
+
+                        <h3 class="amenities-subtitle">OUTDOOR</h3>
+                        <div class="amenities-grid">
+                            <div class="amenity-item">
+                                <span class="amenity-icon">🏛️</span>
+                                <span>Clubhouse</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="amenity-icon">🧘</span>
+                                <span>Meditation area</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="amenity-icon">🎪</span>
+                                <span>Party lawn</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="amenity-icon">🎪</span>
+                                <span>Amphitheatre</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="amenity-icon">🎮</span>
+                                <span>Kids Play area</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="amenity-icon">🌳</span>
+                                <span>Tree house</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="amenity-icon">🏀</span>
+                                <span>Basketball court</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="amenity-icon">⛸️</span>
+                                <span>Skating rink</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="amenity-icon">🎾</span>
+                                <span>Tennis court, etc and many many more, download brochure to know more.</span>
+                            </div>
+                        </div>
+
+                        <!-- Specifications -->
+                        <div class="specifications">
+                            <h3 class="specs-title">SPECIFICATIONS</h3>
+                            <ul class="specs-list">
+                                <li>Intercom, Solar water heater, Piped gas line, Invertor backup in common areas, Water
+                                    softener plant, CCTV camera, many many more... Download Brochure to view complete
+                                    list.</li>
+                                <li>5-Tier - Military-Grade Security Systems, Hi-Tech AI based CCTV, Perimeter Based
+                                    Intrusion
+                                    Alert, AI Safety and Security - RFID boom barrier at the entry gate, CCTV cameras at
+                                    the
+                                    common area , video door phones and intercom facility, access control systems at
+                                    main gate,
+                                    electronic alarms, gas leakage detectors, and many many... Download Brochure to know
+                                    more.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Scrolling Image Section 1 -->
+                        <div class="scrolling-image">
+                            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80"
+                                alt="Central Park View">
+                            <div class="scrolling-overlay"> Pune’s First Master Community with a 500-ft Sky Club on the
+                                50th
+                                Floor - infinity pool, US-standard gym, pickleball court, and elite lifestyle amenities
+                                built
+                                for those who don’t settle for ordinary living. Enquire to experience it.</div>
+                        </div>
+
+                        <!-- Landscape Amenities -->
+                        <h2 class="section-title-split">LANDSCAPE <span class="gold">AMENITIES</span></h2>
+
+                        <h3 class="amenities-subtitle">GROUND LEVEL</h3>
+                        <ul class="landscape-list">
+                            <li>Cycling track – 830m</li>
+                            <li>Organic farming</li>
+                            <li>Lawn mounds</li>
+                            <li>Nature trail – 610m</li>
+                            <li>Gazebo</li>
+                            <li>Tree house</li>
+                            <li>Walkway – 800m</li>
+                            <li>Senior citizens' plaza</li>
+                            <li>Tennis court</li>
+                            <li>Internal road</li>
+                            <li>Bonfire deck</li>
+                            <li>Multipurpose court</li>
+                            <li>Boundary plantation</li>
+                            <li>Barbecue deck</li>
+                            <li>Pet park</li>
+                            <li>Median</li>
+                            <li>Alfresco dining</li>
+                            <li>Artists' corner</li>
+                            <li>Residential entry plaza</li>
+                            <li>Treehouse</li>
+                            <li>Youngsters' sitout</li>
+                            <li>Drop-off</li>
+                            <li>Tree court club house plaza</li>
+                            <li>Strolling garden</li>
+                            <li>Skate park</li>
+                            <li>Feature pergolas</li>
+                            <li>Basketball court</li>
+                            <li>Reading deck, etc... Many many more, download brochure.</li>
+                        </ul>
+
+                        <h3 class="amenities-subtitle">PODIUM LEVEL</h3>
+                        <ul class="landscape-list">
+                            <li>Walking track</li>
+                            <li>Entrance plaza</li>
+                            <li>Tree court</li>
+                            <li>Interactive plaza</li>
+                            <li>Herbal garden</li>
+                            <li>Reflexology path - 50m</li>
+                            <li>Central spine</li>
+                            <li>Stage</li>
+                            <li>Zen garden</li>
+                            <li>Thematic plantation</li>
+                            <li>Multipurpose lawn</li>
+                            <li>Senior citizens' seating</li>
+                            <li>Kids' play area</li>
+                            <li>Open amphitheatre</li>
+                            <li>Social gathering plaza</li>
+                            <li>Kids' hide & seek burrowee</li>
+                            <li>Hobby garden</li>
+                            <li>Sculpture court</li>
+                            <li>Toddlers play area</li>
+                            <li>Open gymnasium</li>
+                            <li>Cycle track</li>
+                            <li>Rock climbing wall</li>
+                            <li>Nature sitout</li>
+                            <li>Event space - 400 to 500 persons</li>
+                            <li>Feature structure</li>
+                            <li>Yoga/meditation deck</li>
+                            <li>Lawn mound etc... Many many more, download brochure.</li>
+                        </ul>
+
+                        <!-- Scrolling Image Section 2 -->
+                        <div class="scrolling-image">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80"
+                                alt="Luxury Living">
+                            <div class="scrolling-overlay">Invite-Only Launch, Get a community with like minded people.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Available Units Section -->
+                <section class="section" id="available-units">
+                    <div class="container">
+                        <h2 class="section-title">Available Units</h2>
+
+                        <div class="units-preview">
+                            <img src="https://i.postimg.cc/Prj0FrXV/Whats-App-Image-2026-01-24-at-18-42-27-(1).jpg"
+                                alt="Available Units Chart">
+                        </div>
+                        <button class="btn-gold">Download live sheet</button>
+
+                        <div class="project-description">
+                            <p>The Central Park is Runwal's very own oasis of refinement. It is Pune's largest
+                                integrated mixed
+                                - use development that brings you all the aspects of an international lifestyle fused
+                                with
+                                nature's charm.</p>
+                        </div>
+
+                        <div class="e-brochure-section whatsapp-cta" data-plan="E-Brochure Download">
+
+                            <div class="download-icon">
+                                <svg viewBox="0 0 100 100" width="80" height="80">
+                                    <circle cx="50" cy="50" r="45" fill="#4A90E2" />
+                                    <path d="M50 30 L50 60 M35 50 L50 65 L65 50" stroke="white" stroke-width="4"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+
+                            <p class="download-text">Download e-Brochure</p>
+                        </div>
+
+                    </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section class="section" id="location">
+            <div class="container">
+                <h2 class="section-title-split">LOCATION <span class="gold">ADVANTAGES</span></h2>
+
+                <div class="location-map">
+                    <div class="map-placeholder">
+                        <!-- <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80"
+                            alt="Location Map"> -->
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.644402579528!2d73.79538931151832!3d18.63505738240785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9c9f6ec7bc1%3A0x48b434f7814414a9!2sRunwal%20The%20Central%20Park!5e0!3m2!1sen!2sin!4v1768650700022!5m2!1sen!2sin"
+                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="map-info">
+                            <h4>Runwal The Central Park</h4>
+                            <p>R Retail Ventures Private Limited<br>
+                                Care of Old Premier Auto Limited,<br>
+                                Runwal Pune, Old Mumbai Pune<br>
+                                Hwy, near Ranka Jewelers, Pimpri-<br>
+                                Chinchwad, Maharashtra 411019</p>
+                            <div class="map-rating">★★★★★</div>
+                            <a href="#" class="map-link">View larger map</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rera-section">
+                    <h3 class="section-title-split">Maha RERA <span class="gold">Details</span></h3>
+                    <img src="https://i.postimg.cc/zvg5wdk3/Whats-App-Image-2026-01-24-at-19-12-50.jpg" <div
+                        class="rera-number">
+                    <span class="rera-icon">🏛️</span>
+                    <span>P52100025260</span>
+                </div>
+                <div class="rera-qr">
+                    <div class="qr-code-placeholder">
+                        <div class="logo-box-small">
+                            <span class="logo-text-small">THE<br>CENTRAL<br>PARK</span>
+                        </div>
+                    </div>
+                    <div class="qr-actual">
+                        <svg viewBox="0 0 100 100" width="150" height="150">
+                            <rect width="100" height="100" fill="white" />
+                            <g fill="black">
+                                <rect x="10" y="10" width="30" height="30" />
+                                <rect x="60" y="10" width="30" height="30" />
+                                <rect x="10" y="60" width="30" height="30" />
+                                <rect x="45" y="45" width="10" height="10" />
+                                <rect x="65" y="65" width="5" height="5" />
+                                <rect x="75" y="65" width="5" height="5" />
+                                <rect x="85" y="65" width="5" height="5" />
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="builder-section">
+                <h3 class="section-title-split">About <span class="gold">Builder</span></h3>
+                <p>Established in 1978 Ruwal Developers is one of Mumbai's Premier realestate organisation,
+                    operating in the residential, commercial and organized retails verticals with a robust track
+                    record of 51 delivered project with over 10 thousand families happily living, the organisation
+                    has continuously striven to keep the customer as a focal point in the designing, planning and
+                    construction of all its projects.</p>
+            </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="disclaimer">
+                    <h4>Disclaimer</h4>
+                    <p>All depictions are representations believed to accurately convey the developer's vision. Art
+                        renderings, illustrations, photographs, and images presented in this material are solely
+                        artistic interpretations & few AI Generated Visuals and should not be interpreted as conclusive
+                        representations of the
+                        final project's appearance. This material does not establish a contractual obligation or
+                        constitute an offer of any kind between the developer/promoter and the prospective buyer.</p>
+                    <p class="auth-text">We are Runwal's Curated Partner with MAHA-RERA Licence number as
+                        A52100031899 and Runwal's Written Permission to run the Ad</p>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>©️ 2024 Runwal central park. All Rights Reserved. Powered By FlownDesigner</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="YouTube">▶️</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- Fixed Bottom CTA Bar -->
+    <div class="bottom-cta-bar">
+        <a href="tel:+919929969577" class="cta-btn">
+            <span class="cta-icon">📞</span>
+            <span>Call</span>
+        </a>
+        <button class="cta-btn" id="enquireBtn">
+            <span class="cta-icon">✉️</span>
+            <span>Enquire</span>
+        </button>
+        <a href="https://wa.me/919929969577" class="cta-btn" target="_blank" rel="noopener">
+            <span class="cta-icon">💬</span>
+            <span>WhatsApp</span>
+        </a>
+    </div>
+
+    <!-- Modal: Schedule Visit -->
+    <div class="modal" id="scheduleModal">
+        <div class="modal-content">
+            <button class="modal-close" id="scheduleModalClose">&times;</button>
+            <h3>Schedule Your Site Visit</h3>
+            <form class="modal-form" id="scheduleForm">
+                <input type="text" placeholder="Name" required minlength="2">
+                <div class="phone-input-wrapper">
+                    <span class="phone-prefix">🇮🇳 +91</span>
+                    <input type="tel" placeholder="Mobile No" required pattern="[0-9]{10}" maxlength="10">
+                </div>
+                <input type="email" placeholder="Email (Optional)">
+                <input type="date" required>
+                <textarea placeholder="Any special requirements?" rows="3"></textarea>
+                <button type="submit" class="btn-gold">Schedule Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Download Cost Sheet -->
+    <div class="modal" id="costSheetModal">
+        <div class="modal-content">
+            <button class="modal-close" id="costSheetModalClose">&times;</button>
+            <h3>Download Cost Sheet</h3>
+            <form class="modal-form" id="costSheetForm">
+                <input type="text" placeholder="Name" required minlength="2">
+                <div class="phone-input-wrapper">
+                    <span class="phone-prefix">🇮🇳 +91</span>
+                    <input type="tel" placeholder="Mobile No" required pattern="[0-9]{10}" maxlength="10">
+                </div>
+                <input type="email" placeholder="Email" required>
+                <button type="submit" class="btn-gold">Download Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Enquire -->
+    <div class="modal" id="enquireModal">
+        <div class="modal-content">
+            <button class="modal-close" id="enquireModalClose">&times;</button>
+            <h3>Send Enquiry</h3>
+            <form class="modal-form" id="enquireForm">
+                <input type="text" placeholder="Name" required minlength="2">
+                <div class="phone-input-wrapper">
+                    <span class="phone-prefix">🇮🇳 +91</span>
+                    <input type="tel" placeholder="Mobile No" required pattern="[0-9]{10}" maxlength="10">
+                </div>
+                <input type="email" placeholder="Email (Optional)">
+                <textarea placeholder="Your message..." rows="4" required></textarea>
+                <button type="submit" class="btn-gold">Send Enquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Overlay for Modals -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+    <script>
+        (function () {
+            const WHATSAPP_NUMBER = "918857090799"; // your number only
+            const DEFAULT_MESSAGE = "Hi, I am interested in Runwal The Central Park. Please share details.";
+
+            function openWhatsApp() {
+                const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(DEFAULT_MESSAGE)}`;
+                window.open(url, "_blank");
+            }
+
+            // Attach to ALL buttons
+            document.querySelectorAll("button").forEach(btn => {
+                btn.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    openWhatsApp();
+                });
+            });
+
+            // Attach to ALL anchor tags (except map / tel links if any)
+            document.querySelectorAll("a").forEach(link => {
+                const href = link.getAttribute("href") || "";
+                if (!href.startsWith("tel:") && !href.includes("google.com/maps")) {
+                    link.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        openWhatsApp();
+                    });
+                }
+            });
+        })();
+    </script>
+    <script>
+        (function () {
+            const WHATSAPP_NUMBER = "918857090799";
+            const MESSAGE = "Hi, I want to download the E-Brochure of Runwal The Central Park. Please share it.";
+
+            document.addEventListener("click", function (e) {
+                const el = e.target;
+
+                // Match text OR section for e-brochure
+                if (
+                    el.innerText?.toLowerCase().includes("download e-brochure") ||
+                    el.closest("#e-brochure") ||
+                    el.closest(".e-brochure-section")
+                ) {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+
+                    const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(MESSAGE);
+                    window.open(url, "_blank");
+                }
+            }, true);
+        })();
+    </script>
+
+</body>
+
+</html>
