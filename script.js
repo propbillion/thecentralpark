@@ -402,7 +402,7 @@ class ModalManager {
             default:
                 message = CONFIG.whatsappMessage;
         }
-
+       console.log("openwhatsapp message : ",CONFIG.whatsappNumber , message)
         const whatsappUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
     }
