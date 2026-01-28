@@ -5,6 +5,8 @@
 const CONFIG = {
     whatsappNumber: '919929969577', // Replace with your WhatsApp number
     whatsappMessage: 'Hello! I am interested in Runwal The Central Park. Please provide more details.',
+    // Replace this URL with your Google Apps Script Web App URL after deployment
+    googleSheetURL: 'https://script.google.com/macros/s/AKfycbzz-dcVZvZ_jUjy7liTTwDD7_hdl40cZTNShQrsmQ4wDaz3I7zSKHh8t3Nz8hMHszU/exec'
 };
 
 // ========================================
@@ -241,6 +243,54 @@ class FormValidator {
 }
 
 // ========================================
+// GOOGLE SHEETS INTEGRATION (FIXED)
+// ========================================
+
+class GoogleSheetsIntegration {
+    constructor() {
+        this.url = CONFIG.googleSheetURL;
+    }
+
+    async submitData(data) {
+        // Check if URL is configured
+        if (!this.url || this.url === 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE') {
+            console.warn('Google Sheets URL not configured. Data will not be saved to sheets.');
+            return { success: true, warning: 'Sheets not configured' };
+        }
+
+        try {
+            // Create form data instead of JSON
+            const formData = new URLSearchParams();
+            for (const key in data) {
+                formData.append(key, data[key]);
+            }
+
+            const response = await fetch(this.url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: formData.toString(),
+                redirect: 'follow'
+            });
+
+            // Check if request was successful
+            if (response.ok || response.type === 'opaque') {
+                console.log('Data submitted to Google Sheets successfully');
+                return { success: true };
+            } else {
+                console.error('Failed to submit to Google Sheets:', response.status);
+                return { success: false, error: `HTTP ${response.status}` };
+            }
+        } catch (error) {
+            console.error('Error submitting to Google Sheets:', error);
+            // Don't block user flow if sheets fail
+            return { success: true, warning: error.message };
+        }
+    }
+}
+
+// ========================================
 // MODAL MANAGER
 // ========================================
 
@@ -254,6 +304,7 @@ class ModalManager {
 
         this.overlay = $('#modalOverlay');
         this.validator = new FormValidator();
+        this.googleSheets = new GoogleSheetsIntegration();
 
         this.init();
     }
@@ -363,7 +414,7 @@ class ModalManager {
         window.open(whatsappUrl, '_blank');
     }
 
-    handleScheduleSubmit(e) {
+    async handleScheduleSubmit(e) {
         e.preventDefault();
         const form = e.target;
 
@@ -371,19 +422,42 @@ class ModalManager {
             return;
         }
 
-        const formData = new FormData(form);
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+        submitButton.disabled = true;
+        submitButton.textContent = 'Submitting...';
+
         const data = {
+            type: 'Schedule Visit',
             name: form.querySelector('input[type="text"]').value,
             mobile: form.querySelector('input[type="tel"]').value,
-            email: form.querySelector('input[type="email"]').value,
+            email: form.querySelector('input[type="email"]').value || 'Not provided',
             date: form.querySelector('input[type="date"]').value,
-            requirements: form.querySelector('textarea').value
+            requirements: form.querySelector('textarea').value || 'None',
+            message: '',
+            timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
         };
 
+        // Submit to Google Sheets (non-blocking)
+        this.googleSheets.submitData(data).then(result => {
+            if (result.success) {
+                console.log('Schedule visit saved to Google Sheets');
+            } else {
+                console.warn('Google Sheets save failed, but continuing...');
+            }
+        });
+
+        // Always proceed with WhatsApp regardless of sheets result
+        setTimeout(() => {
+            submitButton.disabled = false;
+            submitButton.textContent = originalText;
+            this.showSuccessMessage('Request submitted successfully!');
         this.submitToWhatsApp(data, 'schedule');
+            form.reset();
+        }, 500);
     }
 
-    handleCostSheetSubmit(e) {
+    async handleCostSheetSubmit(e) {
         e.preventDefault();
         const form = e.target;
 
@@ -391,31 +465,82 @@ class ModalManager {
             return;
         }
 
-        const data = {
-            name: form.querySelector('input[type="text"]').value,
-            mobile: form.querySelector('input[type="tel"]').value,
-            email: form.querySelector('input[type="email"]').value
-        };
-
-        this.submitToWhatsApp(data, 'costSheet');
-    }
-
-    handleEnquireSubmit(e) {
-        e.preventDefault();
-        const form = e.target;
-
-        if (!this.validator.validateForm(form)) {
-            return;
-        }
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+        submitButton.disabled = true;
+        submitButton.textContent = 'Submitting...';
 
         const data = {
+            type: 'Cost Sheet Request',
             name: form.querySelector('input[type="text"]').value,
             mobile: form.querySelector('input[type="tel"]').value,
             email: form.querySelector('input[type="email"]').value,
-            message: form.querySelector('textarea').value
+            date: '',
+            requirements: '',
+            message: '',
+            timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
         };
 
+        // Submit to Google Sheets (non-blocking)
+        this.googleSheets.submitData(data).then(result => {
+            if (result.success) {
+                console.log('Cost sheet request saved to Google Sheets');
+            } else {
+                console.warn('Google Sheets save failed, but continuing...');
+            }
+        });
+
+        // Always proceed with WhatsApp regardless of sheets result
+        setTimeout(() => {
+            submitButton.disabled = false;
+            submitButton.textContent = originalText;
+            this.showSuccessMessage('Request submitted successfully!');
+        this.submitToWhatsApp(data, 'costSheet');
+            form.reset();
+        }, 500);
+    }
+
+    async handleEnquireSubmit(e) {
+        e.preventDefault();
+        const form = e.target;
+
+        if (!this.validator.validateForm(form)) {
+            return;
+        }
+
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+
+        const data = {
+            type: 'General Enquiry',
+            name: form.querySelector('input[type="text"]').value,
+            mobile: form.querySelector('input[type="tel"]').value,
+            email: form.querySelector('input[type="email"]').value || 'Not provided',
+            date: '',
+            requirements: '',
+            message: form.querySelector('textarea').value,
+            timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
+        };
+
+        // Submit to Google Sheets (non-blocking)
+        this.googleSheets.submitData(data).then(result => {
+            if (result.success) {
+                console.log('Enquiry saved to Google Sheets');
+            } else {
+                console.warn('Google Sheets save failed, but continuing...');
+            }
+        });
+
+        // Always proceed with WhatsApp regardless of sheets result
+        setTimeout(() => {
+            submitButton.disabled = false;
+            submitButton.textContent = originalText;
+            this.showSuccessMessage('Enquiry submitted successfully!');
         this.submitToWhatsApp(data, 'enquire');
+            form.reset();
+        }, 500);
     }
 
     submitToWhatsApp(data, type) {
@@ -423,13 +548,13 @@ class ModalManager {
 
         switch (type) {
             case 'schedule':
-                message = `*Site Visit Request*\n\nName: ${data.name}\nMobile: ${data.mobile}\nEmail: ${data.email || 'Not provided'}\nPreferred Date: ${data.date}\nRequirements: ${data.requirements || 'None'}`;
+                message = `*Site Visit Request*\n\nName: ${data.name}\nMobile: ${data.mobile}\nEmail: ${data.email}\nPreferred Date: ${data.date}\nRequirements: ${data.requirements}`;
                 break;
             case 'costSheet':
                 message = `*Cost Sheet Request*\n\nName: ${data.name}\nMobile: ${data.mobile}\nEmail: ${data.email}`;
                 break;
             case 'enquire':
-                message = `*General Enquiry*\n\nName: ${data.name}\nMobile: ${data.mobile}\nEmail: ${data.email || 'Not provided'}\nMessage: ${data.message}`;
+                message = `*General Enquiry*\n\nName: ${data.name}\nMobile: ${data.mobile}\nEmail: ${data.email}\nMessage: ${data.message}`;
                 break;
         }
 
@@ -437,24 +562,29 @@ class ModalManager {
         window.open(whatsappUrl, '_blank');
 
         this.closeAll();
-        this.showSuccessMessage();
     }
 
-    showSuccessMessage() {
+    showSuccessMessage(text = 'Data submitted successfully!') {
         const successDiv = document.createElement('div');
         successDiv.className = 'success-toast';
-        successDiv.textContent = 'Redirecting to WhatsApp...';
+        successDiv.innerHTML = `
+            <span style="font-size: 1.5rem; margin-right: 0.5rem;">✓</span>
+            <span>${text}</span>
+        `;
         successDiv.style.cssText = `
             position: fixed;
             top: 20px;
             right: 20px;
             background-color: #27ae60;
             color: white;
-            padding: 1rem 2rem;
-            border-radius: 4px;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
             z-index: 10000;
             box-shadow: 0 4px 16px rgba(0,0,0,0.2);
             animation: slideIn 0.3s ease;
+            display: flex;
+            align-items: center;
+            max-width: 90%;
         `;
 
         document.body.appendChild(successDiv);
@@ -462,7 +592,38 @@ class ModalManager {
         setTimeout(() => {
             successDiv.style.animation = 'slideOut 0.3s ease';
             setTimeout(() => successDiv.remove(), 300);
-        }, 2000);
+        }, 3000);
+    }
+
+    showErrorMessage(text = 'Something went wrong. Please try again.') {
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-toast';
+        errorDiv.innerHTML = `
+            <span style="font-size: 1.5rem; margin-right: 0.5rem;">⚠</span>
+            <span>${text}</span>
+        `;
+        errorDiv.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            z-index: 10000;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+            animation: slideIn 0.3s ease;
+            display: flex;
+            align-items: center;
+            max-width: 90%;
+        `;
+
+        document.body.appendChild(errorDiv);
+
+        setTimeout(() => {
+            errorDiv.style.animation = 'slideOut 0.3s ease';
+            setTimeout(() => errorDiv.remove(), 300);
+        }, 4000);
     }
 }
 
@@ -474,6 +635,7 @@ class PreRegistrationForm {
     constructor() {
         this.form = $('#preRegisterForm');
         this.validator = new FormValidator();
+        this.googleSheets = new GoogleSheetsIntegration();
 
         this.init();
     }
@@ -483,7 +645,6 @@ class PreRegistrationForm {
 
         this.form.addEventListener('submit', (e) => this.handleSubmit(e));
 
-        // Real-time validation
         const inputs = this.form.querySelectorAll('input');
         inputs.forEach(input => {
             input.addEventListener('blur', () => {
@@ -498,42 +659,73 @@ class PreRegistrationForm {
         });
     }
 
-    handleSubmit(e) {
+    async handleSubmit(e) {
         e.preventDefault();
 
         if (!this.validator.validateForm(this.form)) {
             return;
         }
 
+        const submitButton = this.form.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+        submitButton.disabled = true;
+        submitButton.textContent = 'Submitting...';
+
         const data = {
+            type: 'Pre-Registration',
             name: $('#name').value,
-            mobile: $('#mobile').value
+            mobile: $('#mobile').value,
+            email: '',
+            date: '',
+            requirements: '',
+            message: '',
+            timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
         };
 
-        const message = `*Pre-Registration Request*\n\nName: ${data.name}\nMobile: ${data.mobile}\n\nI would like to pre-register for a 1 Lakh discount on Runwal The Central Park.`;
+        // Submit to Google Sheets (non-blocking)
+        this.googleSheets.submitData(data).then(result => {
+            if (result.success) {
+                console.log('Pre-registration saved to Google Sheets');
+            } else {
+                console.warn('Google Sheets save failed, but continuing...');
+            }
+        });
 
+        // Always proceed with WhatsApp regardless of sheets result
+        setTimeout(() => {
+            submitButton.disabled = false;
+            submitButton.textContent = originalText;
+            this.showSuccessMessage();
+
+        const message = `*Pre-Registration Request*\n\nName: ${data.name}\nMobile: ${data.mobile}\n\nI would like to pre-register for a 1 Lakh discount on Runwal The Central Park.`;
         const whatsappUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
 
-        this.showSuccessMessage();
         this.form.reset();
+        }, 500);
     }
 
     showSuccessMessage() {
         const successDiv = document.createElement('div');
         successDiv.className = 'success-toast';
-        successDiv.textContent = 'Redirecting to WhatsApp...';
+        successDiv.innerHTML = `
+            <span style="font-size: 1.5rem; margin-right: 0.5rem;">✓</span>
+            <span>Pre-registration successful! Redirecting to WhatsApp...</span>
+        `;
         successDiv.style.cssText = `
             position: fixed;
             top: 20px;
             right: 20px;
             background-color: #27ae60;
             color: white;
-            padding: 1rem 2rem;
-            border-radius: 4px;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
             z-index: 10000;
             box-shadow: 0 4px 16px rgba(0,0,0,0.2);
             animation: slideIn 0.3s ease;
+            display: flex;
+            align-items: center;
+            max-width: 90%;
         `;
 
         document.body.appendChild(successDiv);
@@ -541,7 +733,7 @@ class PreRegistrationForm {
         setTimeout(() => {
             successDiv.style.animation = 'slideOut 0.3s ease';
             setTimeout(() => successDiv.remove(), 300);
-        }, 2000);
+        }, 3000);
     }
 }
 
@@ -769,30 +961,6 @@ class PhoneFormatter {
 }
 
 // ========================================
-// PERFORMANCE MONITORING
-// ========================================
-
-const monitorPerformance = () => {
-    if ('PerformanceObserver' in window) {
-        // Monitor Largest Contentful Paint
-        const lcpObserver = new PerformanceObserver((list) => {
-            const entries = list.getEntries();
-            const lastEntry = entries[entries.length - 1];
-            console.log('LCP:', lastEntry.renderTime || lastEntry.loadTime);
-        });
-        lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
-
-        // Monitor First Input Delay
-        const fidObserver = new PerformanceObserver((list) => {
-            list.getEntries().forEach((entry) => {
-                console.log('FID:', entry.processingStart - entry.startTime);
-            });
-        });
-        fidObserver.observe({ entryTypes: ['first-input'] });
-    }
-};
-
-// ========================================
 // INITIALIZATION
 // ========================================
 
@@ -811,28 +979,22 @@ const init = () => {
     new AnimateOnScroll();
     new PhoneFormatter();
 
-    // Monitor performance (development only)
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        monitorPerformance();
-    }
-
     // Log initialization
     console.log('🏢 Runwal The Central Park - Website Initialized');
     console.log('📱 For support, contact: +91 9929969577');
+    console.log('📊 Google Sheets Integration: Active');
 };
 
 // ========================================
 // START APP
 // ========================================
 
-// Wait for DOM to be ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
 } else {
     init();
 }
 
-// Handle page visibility
 document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
         console.log('Page hidden');
@@ -841,23 +1003,13 @@ document.addEventListener('visibilitychange', () => {
     }
 });
 
-// Service Worker Registration (for PWA support - optional)
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        // Uncomment to enable service worker
-        // navigator.serviceWorker.register('/sw.js')
-        //     .then(reg => console.log('Service Worker registered'))
-        //     .catch(err => console.log('Service Worker registration failed'));
-    });
-}
-
-// Export for potential module usage
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         SidebarMenu,
         SmoothScroll,
         ModalManager,
         FormValidator,
-        PreRegistrationForm
+        PreRegistrationForm,
+        GoogleSheetsIntegration
     };
 }
