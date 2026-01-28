@@ -6,7 +6,7 @@ const CONFIG = {
     whatsappNumber: '918857090799',
     whatsappMessage: 'Hello! I am interested in Runwal The Central Park. Please provide more details.',
     // Replace this URL with your Google Apps Script Web App URL after deployment
-    googleSheetURL: 'https://script.google.com/macros/s/AKfycbzz-dcVZvZ_jUjy7liTTwDD7_hdl40cZTNShQrsmQ4wDaz3I7zSKHh8t3Nz8hMHszU/exec'
+    googleSheetURL: 'https://script.google.com/macros/s/AKfycbw0c_YiZ9W0-f2fRIe0MGSUuyMcd5BoCNoero-SFiHxYo5y7-c2W3Iz7YGGAqBfy6k/exec'
 };
 
 // ========================================
@@ -385,7 +385,7 @@ class ModalManager {
 
     openWhatsApp(type) {
         let message = '';
-    console.log("openwhatsapp: ",type)
+
         switch (type) {
             case 'payment':
                 message = `*Payment Schedule Request*\n\nI would like to receive the payment schedule details for Runwal The Central Park.`;
@@ -402,7 +402,7 @@ class ModalManager {
             default:
                 message = CONFIG.whatsappMessage;
         }
-       console.log("openwhatsapp message : ",CONFIG.whatsappNumber , message)
+
         const whatsappUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
     }
@@ -550,7 +550,7 @@ class ModalManager {
                 message = `*General Enquiry*\n\nName: ${data.name}\nMobile: ${data.mobile}\nEmail: ${data.email}\nMessage: ${data.message}`;
                 break;
         }
-    console.log("openwhatsapp message2 : ",CONFIG.whatsappNumber , message)
+
         const whatsappUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
 
@@ -692,7 +692,6 @@ class PreRegistrationForm {
 
             const message = `*Pre-Registration Request*\n\nName: ${data.name}\nMobile: ${data.mobile}\n\nI would like to pre-register for a 1 Lakh discount on Runwal The Central Park.`;
             const whatsappUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
-            console.log("openwhatsapp message3 : ",CONFIG.whatsappNumber , message)
             window.open(whatsappUrl, '_blank');
 
             this.form.reset();
