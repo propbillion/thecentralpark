@@ -385,7 +385,7 @@ class ModalManager {
 
     openWhatsApp(type) {
         let message = '';
-
+    console.log("openwhatsapp: ",type)
         switch (type) {
             case 'payment':
                 message = `*Payment Schedule Request*\n\nI would like to receive the payment schedule details for Runwal The Central Park.`;
