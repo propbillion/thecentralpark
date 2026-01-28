@@ -3,7 +3,7 @@
 // ========================================
 
 const CONFIG = {
-    whatsappNumber: '919929969577',
+    whatsappNumber: '918857090799',
     whatsappMessage: 'Hello! I am interested in Runwal The Central Park. Please provide more details.',
     // Replace this URL with your Google Apps Script Web App URL after deployment
     googleSheetURL: 'https://script.google.com/macros/s/AKfycbzz-dcVZvZ_jUjy7liTTwDD7_hdl40cZTNShQrsmQ4wDaz3I7zSKHh8t3Nz8hMHszU/exec'
