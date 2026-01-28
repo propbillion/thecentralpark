@@ -550,7 +550,7 @@ class ModalManager {
                 message = `*General Enquiry*\n\nName: ${data.name}\nMobile: ${data.mobile}\nEmail: ${data.email}\nMessage: ${data.message}`;
                 break;
         }
-
+    console.log("openwhatsapp message2 : ",CONFIG.whatsappNumber , message)
         const whatsappUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
 
@@ -692,6 +692,7 @@ class PreRegistrationForm {
 
             const message = `*Pre-Registration Request*\n\nName: ${data.name}\nMobile: ${data.mobile}\n\nI would like to pre-register for a 1 Lakh discount on Runwal The Central Park.`;
             const whatsappUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
+            console.log("openwhatsapp message3 : ",CONFIG.whatsappNumber , message)
             window.open(whatsappUrl, '_blank');
 
             this.form.reset();
