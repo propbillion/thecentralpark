@@ -816,59 +816,7 @@
 
     <!-- Script -->
     <script src="script.js"></script>
-    <script>
-        (function () {
-            const WHATSAPP_NUMBER = "918857090799"; // your number only
-            const DEFAULT_MESSAGE = "Hi, I am interested in Runwal The Central Park. Please share details.";
-
-            function openWhatsApp() {
-                const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(DEFAULT_MESSAGE)}`;
-                window.open(url, "_blank");
-            }
-
-            // Attach to ALL buttons
-            document.querySelectorAll("button").forEach(btn => {
-                btn.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    openWhatsApp();
-                });
-            });
-
-            // Attach to ALL anchor tags (except map / tel links if any)
-            document.querySelectorAll("a").forEach(link => {
-                const href = link.getAttribute("href") || "";
-                if (!href.startsWith("tel:") && !href.includes("google.com/maps")) {
-                    link.addEventListener("click", function (e) {
-                        e.preventDefault();
-                        openWhatsApp();
-                    });
-                }
-            });
-        })();
-    </script>
-    <script>
-        (function () {
-            const WHATSAPP_NUMBER = "918857090799";
-            const MESSAGE = "Hi, I want to download the E-Brochure of Runwal The Central Park. Please share it.";
-
-            document.addEventListener("click", function (e) {
-                const el = e.target;
-
-                // Match text OR section for e-brochure
-                if (
-                    el.innerText?.toLowerCase().includes("download e-brochure") ||
-                    el.closest("#e-brochure") ||
-                    el.closest(".e-brochure-section")
-                ) {
-                    e.preventDefault();
-                    e.stopImmediatePropagation();
-
-                    const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(MESSAGE);
-                    window.open(url, "_blank");
-                }
-            }, true);
-        })();
-    </script>
+    
 
 </body>
 
