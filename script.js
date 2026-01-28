@@ -3,7 +3,7 @@
 // ========================================
 
 const CONFIG = {
-    whatsappNumber: '919929969577', // Replace with your WhatsApp number
+    whatsappNumber: '919929969577',
     whatsappMessage: 'Hello! I am interested in Runwal The Central Park. Please provide more details.',
     // Replace this URL with your Google Apps Script Web App URL after deployment
     googleSheetURL: 'https://script.google.com/macros/s/AKfycbzz-dcVZvZ_jUjy7liTTwDD7_hdl40cZTNShQrsmQ4wDaz3I7zSKHh8t3Nz8hMHszU/exec'
@@ -161,7 +161,6 @@ class FormValidator {
 
         if (!rule) return { isValid: true };
 
-        // Check required
         if (rule.required && !value) {
             return {
                 isValid: false,
@@ -169,12 +168,10 @@ class FormValidator {
             };
         }
 
-        // If not required and empty, it's valid
         if (!rule.required && !value) {
             return { isValid: true };
         }
 
-        // Check min length
         if (rule.minLength && value.length < rule.minLength) {
             return {
                 isValid: false,
@@ -182,7 +179,6 @@ class FormValidator {
             };
         }
 
-        // Check pattern
         if (rule.pattern && !rule.pattern.test(value)) {
             return {
                 isValid: false,
@@ -214,13 +210,11 @@ class FormValidator {
         input.classList.add('error');
         input.classList.remove('success');
 
-        // Remove existing error message
         const existingError = input.parentElement.querySelector('.error-message');
         if (existingError) {
             existingError.remove();
         }
 
-        // Add new error message
         const errorDiv = document.createElement('div');
         errorDiv.className = 'error-message';
         errorDiv.textContent = message;
@@ -405,7 +399,6 @@ class ModalManager {
             case 'token':
                 message = `*Token No. Request*\n\nI would like to receive the token number for Runwal The Central Park.`;
                 break;
-
             default:
                 message = CONFIG.whatsappMessage;
         }
@@ -452,7 +445,7 @@ class ModalManager {
             submitButton.disabled = false;
             submitButton.textContent = originalText;
             this.showSuccessMessage('Request submitted successfully!');
-        this.submitToWhatsApp(data, 'schedule');
+            this.submitToWhatsApp(data, 'schedule');
             form.reset();
         }, 500);
     }
@@ -495,7 +488,7 @@ class ModalManager {
             submitButton.disabled = false;
             submitButton.textContent = originalText;
             this.showSuccessMessage('Request submitted successfully!');
-        this.submitToWhatsApp(data, 'costSheet');
+            this.submitToWhatsApp(data, 'costSheet');
             form.reset();
         }, 500);
     }
@@ -538,7 +531,7 @@ class ModalManager {
             submitButton.disabled = false;
             submitButton.textContent = originalText;
             this.showSuccessMessage('Enquiry submitted successfully!');
-        this.submitToWhatsApp(data, 'enquire');
+            this.submitToWhatsApp(data, 'enquire');
             form.reset();
         }, 500);
     }
@@ -697,11 +690,11 @@ class PreRegistrationForm {
             submitButton.textContent = originalText;
             this.showSuccessMessage();
 
-        const message = `*Pre-Registration Request*\n\nName: ${data.name}\nMobile: ${data.mobile}\n\nI would like to pre-register for a 1 Lakh discount on Runwal The Central Park.`;
-        const whatsappUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, '_blank');
+            const message = `*Pre-Registration Request*\n\nName: ${data.name}\nMobile: ${data.mobile}\n\nI would like to pre-register for a 1 Lakh discount on Runwal The Central Park.`;
+            const whatsappUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
 
-        this.form.reset();
+            this.form.reset();
         }, 500);
     }
 
@@ -915,7 +908,7 @@ const addAnimationStyles = () => {
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
-            }
+        }
         
         @keyframes scaleIn {
             from {
