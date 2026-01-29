@@ -309,7 +309,7 @@ class ModalManager {
         $('#scheduleModalClose')?.addEventListener('click', () => this.close('schedule'));
 
         // Cost Sheet Modal
-        $('#downloadCostSheetBtn')?.addEventListener('click', () => this.open('costSheet'));
+        $('#downloadCostSheetBtn')?.addEventListener('click', () => this.openWhatsApp('costSheet'));
         
         $('#costSheetModalClose')?.addEventListener('click', () => this.close('costSheet'));
 
