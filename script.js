@@ -340,9 +340,9 @@ class ModalManager {
         $('#priceBtn4')?.addEventListener('click', () => this.openWhatsApp('price4BHK'));
         $('#priceBtn5')?.addEventListener('click', () => this.openWhatsApp('price4.5BHK'));
         $('#priceBtn6')?.addEventListener('click', () => this.openWhatsApp('price5BHK'));
-        $('#floorBtn1')?.addEventListener('click', () => this.openWhatsApp('floorplans'));
-        $('#floorBtn2')?.addEventListener('click', () => this.openWhatsApp('floorplans'));
-        $('#floorBtn3')?.addEventListener('click', () => this.openWhatsApp('floorplans'));
+        $('#floorBtn1')?.addEventListener('click', () => this.openWhatsApp('floorplans1'));
+        $('#floorBtn2')?.addEventListener('click', () => this.openWhatsApp('floorplans2'));
+        $('#floorBtn3')?.addEventListener('click', () => this.openWhatsApp('floorplans3'));
          $('#liveSheetBtn')?.addEventListener('click', () => this.openWhatsApp('liveSheet'));
 
         // Enquire Modal
@@ -449,6 +449,15 @@ class ModalManager {
                 break;
             case 'floorplans':
                 message = `*Floor Plans Request*\n\nI would like to receive detailed floor plans including Master Plan, Floor Plans, Refuge Plans, and Unit Plans with dimensions for Runwal The Central Park.`;
+                break;
+                 case 'floorplans1':
+                message = `*Floor Plans Request*\n\nI would like to receive detailed 2|3-BHK Floor Plans including Master Plan, Floor Plans, Refuge Plans, and Unit Plans with dimensions for Runwal The Central Park.`;
+                break;
+                 case 'floorplans2':
+                message = `*Floor Plans Request*\n\nI would like to receive detailed 3|3.5-BHK Floor Plans including Master Plan, Floor Plans, Refuge Plans, and Unit Plans with dimensions for Runwal The Central Park.`;
+                break;
+                 case 'floorplans3':
+                message = `*Floor Plans Request*\n\nI would like to receive detailed 4|4.5|5.5 BHK Floor Plans including Master Plan, Floor Plans, Refuge Plans, and Unit Plans with dimensions for Runwal The Central Park.`;
                 break;
             case 'token':
                 message = `*Discount Code Request*\n\nI would like to receive the discount code for Runwal The Central Park.`;
