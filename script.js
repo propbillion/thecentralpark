@@ -333,8 +333,15 @@ class ModalManager {
         $('#costSheetBtn')?.addEventListener('click', () => this.openWhatsApp('costSheet'));
         $('#brochureHeroBtn')?.addEventListener('click', () => this.openWhatsApp('brochure'));
         $('#floorPlansBtn')?.addEventListener('click', () => this.openWhatsApp('floorplans'));
-        $('.priceBtn')?.addEventListener('click', () => this.openWhatsApp('price'));
-        $('.floor-btn')?.addEventListener('click', () => this.openWhatsApp('floorplans'));
+        $('#priceBtn1')?.addEventListener('click', () => this.openWhatsApp('price'));
+        $('#priceBtn2')?.addEventListener('click', () => this.openWhatsApp('price'));
+        $('#priceBtn3')?.addEventListener('click', () => this.openWhatsApp('price'));
+        $('#priceBtn4')?.addEventListener('click', () => this.openWhatsApp('price'));
+        $('#priceBtn5')?.addEventListener('click', () => this.openWhatsApp('price'));
+        $('#priceBtn6')?.addEventListener('click', () => this.openWhatsApp('price'));
+        $('#floorBtn1')?.addEventListener('click', () => this.openWhatsApp('floorplans'));
+        $('#floorBtn2')?.addEventListener('click', () => this.openWhatsApp('floorplans'));
+        $('#floorBtn3')?.addEventListener('click', () => this.openWhatsApp('floorplans'));
 
         // Enquire Modal
         $('#enquireBtn')?.addEventListener('click', () => this.open('enquire'));
