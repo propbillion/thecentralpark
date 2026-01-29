@@ -330,8 +330,10 @@ class ModalManager {
         $('#getTokenNoBtn')?.addEventListener('click', () => this.openWhatsApp('token'));
         $('#floorPlansCTABtn')?.addEventListener('click', () => this.openWhatsApp('floorplans'));
         $('#costSheetHeroBtn')?.addEventListener('click', () => this.openWhatsApp('costSheet'));
+        $('#costSheetBtn')?.addEventListener('click', () => this.openWhatsApp('costSheet'));
         $('#brochureHeroBtn')?.addEventListener('click', () => this.openWhatsApp('brochure'));
         $('#floorPlansBtn')?.addEventListener('click', () => this.openWhatsApp('floorplans'));
+        $('#priceBtn')?.addEventListener('click', () => this.openWhatsApp('price'));
 
         // Enquire Modal
         $('#enquireBtn')?.addEventListener('click', () => this.open('enquire'));
@@ -395,6 +397,9 @@ class ModalManager {
         switch (type) {
             case 'payment':
                 message = `*Payment Schedule Request*\n\nI would like to receive the payment schedule details for Runwal The Central Park.`;
+                break;
+                case 'price':
+                message = `*Price Break Up Request*\n\nI would like to receive the price break up details for Runwal The Central Park.`;
                 break;
                 case 'viewSky':
                 message = `*View Sky Club Plan Request*\n\nI would like to receive the View Sky Club plan for Runwal The Central Park.`;
