@@ -332,6 +332,7 @@ class ModalManager {
         $('#costSheetHeroBtn')?.addEventListener('click', () => this.openWhatsApp('costSheet'));
         $('#costSheetBtn')?.addEventListener('click', () => this.openWhatsApp('costSheet'));
         $('#brochureHeroBtn')?.addEventListener('click', () => this.openWhatsApp('brochure'));
+         $('#dwnBrochBtn')?.addEventListener('click', () => this.openWhatsApp('brochure'));
         $('#floorPlansBtn')?.addEventListener('click', () => this.openWhatsApp('floorplans'));
         $('#priceBtn1')?.addEventListener('click', () => this.openWhatsApp('price'));
         $('#priceBtn2')?.addEventListener('click', () => this.openWhatsApp('price'));
@@ -342,6 +343,7 @@ class ModalManager {
         $('#floorBtn1')?.addEventListener('click', () => this.openWhatsApp('floorplans'));
         $('#floorBtn2')?.addEventListener('click', () => this.openWhatsApp('floorplans'));
         $('#floorBtn3')?.addEventListener('click', () => this.openWhatsApp('floorplans'));
+         $('#liveSheetBtn')?.addEventListener('click', () => this.openWhatsApp('liveSheet'));
 
         // Enquire Modal
         $('#enquireBtn')?.addEventListener('click', () => this.open('enquire'));
@@ -426,6 +428,9 @@ class ModalManager {
                 break;
             case 'brochure':
                 message = `*E-Brochure Request*\n\nI would like to receive the e-brochure for Runwal The Central Park.`;
+                break;
+                case 'liveSheet':
+                message =  `*Live Sheet Request*\n\nI would like to receive the live sheet details for Runwal The Central Park.`;
                 break;
             case 'floorplans':
                 message = `*Floor Plans Request*\n\nI would like to receive detailed floor plans including Master Plan, Floor Plans, Refuge Plans, and Unit Plans with dimensions for Runwal The Central Park.`;
