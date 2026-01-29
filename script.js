@@ -333,7 +333,8 @@ class ModalManager {
         $('#costSheetBtn')?.addEventListener('click', () => this.openWhatsApp('costSheet'));
         $('#brochureHeroBtn')?.addEventListener('click', () => this.openWhatsApp('brochure'));
         $('#floorPlansBtn')?.addEventListener('click', () => this.openWhatsApp('floorplans'));
-        $('#priceBtn')?.addEventListener('click', () => this.openWhatsApp('price'));
+        $('.priceBtn')?.addEventListener('click', () => this.openWhatsApp('price'));
+        $('.floor-btn')?.addEventListener('click', () => this.openWhatsApp('floorplans'));
 
         // Enquire Modal
         $('#enquireBtn')?.addEventListener('click', () => this.open('enquire'));
