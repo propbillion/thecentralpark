@@ -323,6 +323,8 @@ class ModalManager {
 
         // Hero Buttons for WhatsApp navigation
         $('#paymentScheduleBtn')?.addEventListener('click', () => this.openWhatsApp('payment'));
+        $('#viewMasterBtn')?.addEventListener('click', () => this.openWhatsApp('master'));
+        $('#downBrchBtn')?.addEventListener('click', () => this.openWhatsApp('brochure'));
          $('#viewSkyBtn')?.addEventListener('click', () => this.openWhatsApp('viewSky'));
         $('#enquireNowBtn')?.addEventListener('click', () => this.openWhatsApp('enquire'));
         $('#getTokenNoBtn')?.addEventListener('click', () => this.openWhatsApp('token'));
@@ -395,13 +397,16 @@ class ModalManager {
                 message = `*Payment Schedule Request*\n\nI would like to receive the payment schedule details for Runwal The Central Park.`;
                 break;
                 case 'viewSky':
-                message = `*View Sky Club  Request*\n\nI would like to receive the View Sky Club plan for Runwal The Central Park.`;
+                message = `*View Sky Club Plan Request*\n\nI would like to receive the View Sky Club plan for Runwal The Central Park.`;
                 break;
                 case 'schedule':
                 message = `*Schedule Request*\n\nI would like to schedule visit for Runwal The Central Park.`;
                 break;
                 case 'enquire':
                 message = `*Enquire  Request*\n\nI would like to enquire details for Runwal The Central Park.`;
+                break;
+                case 'master':
+                message = `*Master Plan  Request*\n\nI would like to recieve master plan details for Runwal The Central Park.`;
                 break;
                 case 'costSheet':
                 message = `*Cost Sheet Request*\n\nI would like to receive the cost sheet details for Runwal The Central Park.`;
