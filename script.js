@@ -310,7 +310,7 @@ class ModalManager {
 
         // Cost Sheet Modal
         $('#downloadCostSheetBtn')?.addEventListener('click', () => this.open('costSheet'));
-        $('#costSheetHeroBtn')?.addEventListener('click', () => this.open('costSheet'));
+        
         $('#costSheetModalClose')?.addEventListener('click', () => this.close('costSheet'));
 
         // All "Download Cost Sheet" buttons
@@ -324,6 +324,7 @@ class ModalManager {
         $('#paymentScheduleBtn')?.addEventListener('click', () => this.openWhatsApp('payment'));
         $('#getTokenNoBtn')?.addEventListener('click', () => this.openWhatsApp('token'));
         $('#floorPlansCTABtn')?.addEventListener('click', () => this.openWhatsApp('floorplans'));
+        $('#costSheetHeroBtn')?.addEventListener('click', () => this.openWhatsApp('costSheet'));
         $('#brochureHeroBtn')?.addEventListener('click', () => this.openWhatsApp('brochure'));
         $('#floorPlansBtn')?.addEventListener('click', () => this.openWhatsApp('floorplans'));
 
@@ -389,6 +390,9 @@ class ModalManager {
         switch (type) {
             case 'payment':
                 message = `*Payment Schedule Request*\n\nI would like to receive the payment schedule details for Runwal The Central Park.`;
+                break;
+                case 'costSheet':
+                message = `*Cost Sheet Request*\n\nI would like to receive the cost sheet details for Runwal The Central Park.`;
                 break;
             case 'brochure':
                 message = `*E-Brochure Request*\n\nI would like to receive the e-brochure for Runwal The Central Park.`;
