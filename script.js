@@ -314,11 +314,11 @@ class ModalManager {
         $('#costSheetModalClose')?.addEventListener('click', () => this.close('costSheet'));
 
         // All "Download Cost Sheet" buttons
-        $$('.btn-gold').forEach(btn => {
-            if (btn.textContent.includes('Cost Sheet') || btn.textContent.includes('cost sheet')) {
-                btn.addEventListener('click', () => this.open('costSheet'));
-            }
-        });
+        // $$('.btn-gold').forEach(btn => {
+        //     if (btn.textContent.includes('Cost Sheet') || btn.textContent.includes('cost sheet')) {
+        //         btn.addEventListener('click', () => this.open('costSheet'));
+        //     }
+        // });
         
 
         // Hero Buttons for WhatsApp navigation
