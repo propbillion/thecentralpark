@@ -397,7 +397,7 @@ class ModalManager {
                 message = `*Floor Plans Request*\n\nI would like to receive detailed floor plans including Master Plan, Floor Plans, Refuge Plans, and Unit Plans with dimensions for Runwal The Central Park.`;
                 break;
             case 'token':
-                message = `*Token No. Request*\n\nI would like to receive the token number for Runwal The Central Park.`;
+                message = `*Discount Code Request*\n\nI would like to receive the discount code for Runwal The Central Park.`;
                 break;
             default:
                 message = CONFIG.whatsappMessage;
