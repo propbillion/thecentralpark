@@ -412,16 +412,16 @@ class ModalManager {
                 message = `*Price Break Up Request*\n\nI would like to receive the price break up details for Runwal The Central Park.`;
                 break;
                 case 'viewSky':
-                message = `*View Sky Club Plan Request*\n\nI would like to receive the View Sky Club plan for Runwal The Central Park.`;
+                message = `*Sky Club Plan Request*\n\nI would like to receive the Sky Club plan for Runwal The Central Park.`;
                 break;
                 case 'schedule':
                 message = `*Schedule Request*\n\nI would like to schedule visit for Runwal The Central Park.`;
                 break;
                 case 'enquire':
-                message = `*Enquire  Request*\n\nI would like to enquire details for Runwal The Central Park.`;
+                message = `*Enquire Request*\n\nI would like to enquire details for Runwal The Central Park.`;
                 break;
                 case 'master':
-                message = `*Master Plan  Request*\n\nI would like to recieve master plan details for Runwal The Central Park.`;
+                message = `*Master Plan Request*\n\nI would like to recieve Master Plan for Runwal The Central Park.`;
                 break;
                 case 'costSheet':
                 message = `*Cost Sheet Request*\n\nI would like to receive the cost sheet details for Runwal The Central Park.`;
