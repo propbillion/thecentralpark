@@ -323,6 +323,7 @@ class ModalManager {
 
         // Hero Buttons for WhatsApp navigation
         $('#paymentScheduleBtn')?.addEventListener('click', () => this.openWhatsApp('payment'));
+         $('#viewSkyBtn')?.addEventListener('click', () => this.openWhatsApp('viewSky'));
         $('#enquireNowBtn')?.addEventListener('click', () => this.openWhatsApp('enquire'));
         $('#getTokenNoBtn')?.addEventListener('click', () => this.openWhatsApp('token'));
         $('#floorPlansCTABtn')?.addEventListener('click', () => this.openWhatsApp('floorplans'));
@@ -392,6 +393,9 @@ class ModalManager {
         switch (type) {
             case 'payment':
                 message = `*Payment Schedule Request*\n\nI would like to receive the payment schedule details for Runwal The Central Park.`;
+                break;
+                case 'viewSky':
+                message = `*View Sky Club  Request*\n\nI would like to receive the View Sky Club plan for Runwal The Central Park.`;
                 break;
                 case 'schedule':
                 message = `*Schedule Request*\n\nI would like to schedule visit for Runwal The Central Park.`;
