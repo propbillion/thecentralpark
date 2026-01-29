@@ -424,7 +424,7 @@ class ModalManager {
                 message = `*Price Break Up Request*\n\nI would like to receive the 4.5-BHK-King-(With Servant Room & Restroom) price break up details for Runwal The Central Park.`;
                 break;
                  case 'price5BHK':
-                message = `*Price Break Up Request*\n\nI would like to receive the 5-BHK-LARGE-(With Servant Room & Restroom) price break up details for Runwal The Central Park.`;
+                message = `*Price Break Up Request*\n\nI would like to receive the 5-BHK-CLASS-(With Servant Room & Restroom) price break up details for Runwal The Central Park.`;
                 break;
                 case 'viewSky':
                 message = `*Sky Club Plan Request*\n\nI would like to receive the Sky Club plan for Runwal The Central Park.`;
