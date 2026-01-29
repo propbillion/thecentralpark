@@ -334,12 +334,12 @@ class ModalManager {
         $('#brochureHeroBtn')?.addEventListener('click', () => this.openWhatsApp('brochure'));
          $('#dwnBrochBtn')?.addEventListener('click', () => this.openWhatsApp('brochure'));
         $('#floorPlansBtn')?.addEventListener('click', () => this.openWhatsApp('floorplans'));
-        $('#priceBtn1')?.addEventListener('click', () => this.openWhatsApp('price'));
-        $('#priceBtn2')?.addEventListener('click', () => this.openWhatsApp('price'));
-        $('#priceBtn3')?.addEventListener('click', () => this.openWhatsApp('price'));
-        $('#priceBtn4')?.addEventListener('click', () => this.openWhatsApp('price'));
-        $('#priceBtn5')?.addEventListener('click', () => this.openWhatsApp('price'));
-        $('#priceBtn6')?.addEventListener('click', () => this.openWhatsApp('price'));
+        $('#priceBtn1')?.addEventListener('click', () => this.openWhatsApp('price2BHK'));
+        $('#priceBtn2')?.addEventListener('click', () => this.openWhatsApp('price3BHK'));
+        $('#priceBtn3')?.addEventListener('click', () => this.openWhatsApp('price3.5BHK'));
+        $('#priceBtn4')?.addEventListener('click', () => this.openWhatsApp('price4BHK'));
+        $('#priceBtn5')?.addEventListener('click', () => this.openWhatsApp('price4.5BHK'));
+        $('#priceBtn6')?.addEventListener('click', () => this.openWhatsApp('price5BHK'));
         $('#floorBtn1')?.addEventListener('click', () => this.openWhatsApp('floorplans'));
         $('#floorBtn2')?.addEventListener('click', () => this.openWhatsApp('floorplans'));
         $('#floorBtn3')?.addEventListener('click', () => this.openWhatsApp('floorplans'));
@@ -408,8 +408,23 @@ class ModalManager {
             case 'payment':
                 message = `*Payment Schedule Request*\n\nI would like to receive the payment schedule details for Runwal The Central Park.`;
                 break;
-                case 'price':
-                message = `*Price Break Up Request*\n\nI would like to receive the price break up details for Runwal The Central Park.`;
+                case 'price2BHK':
+                message = `*Price Break Up Request*\n\nI would like to receive the 2-BHK-LARGE price break up details for Runwal The Central Park.`;
+                break;
+                case 'price3BHK':
+                message = `*Price Break Up Request*\n\nI would like to receive the 3-BHK-LARGE price break up details for Runwal The Central Park.`;
+                break;
+                 case 'price3.5BHK':
+                message = `*Price Break Up Request*\n\nI would like to receive the 3.5 BHK-(With Servant Room & Restroom) price break up details for Runwal The Central Park.`;
+                break;
+                 case 'price4BHK':
+                message = `*Price Break Up Request*\n\nI would like to receive the 4-BHK-Queen-(With Servant Room & Restroom) price break up details for Runwal The Central Park.`;
+                break;
+                 case 'price4.5BHK':
+                message = `*Price Break Up Request*\n\nI would like to receive the 4.5-BHK-King-(With Servant Room & Restroom) price break up details for Runwal The Central Park.`;
+                break;
+                 case 'price5BHK':
+                message = `*Price Break Up Request*\n\nI would like to receive the 5-BHK-LARGE-(With Servant Room & Restroom) price break up details for Runwal The Central Park.`;
                 break;
                 case 'viewSky':
                 message = `*Sky Club Plan Request*\n\nI would like to receive the Sky Club plan for Runwal The Central Park.`;
