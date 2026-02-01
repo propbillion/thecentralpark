@@ -573,10 +573,10 @@ class ModalManager {
             type: 'General Enquiry',
             name: form.querySelector('input[type="text"]').value,
             mobile: form.querySelector('input[type="tel"]').value,
-            email: form.querySelector('input[type="email"]').value || 'Not provided',
+            email: form.querySelector('input[type="email"]')?.value || 'Not provided',
             date: '',
             requirements: '',
-            message: form.querySelector('textarea').value || '',
+            message: form.querySelector('textarea')?.value || '',
             timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
         };
 
