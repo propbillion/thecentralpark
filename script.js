@@ -576,7 +576,7 @@ class ModalManager {
             email: form.querySelector('input[type="email"]').value || 'Not provided',
             date: '',
             requirements: '',
-            message: form.querySelector('textarea').value,
+            message: form.querySelector('textarea').value || '',
             timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
         };
 
