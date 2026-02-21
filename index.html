@@ -32,6 +32,51 @@ function gtag_report_conversion(url) {
   return false;
 }
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+ var ids = [
+    "costSheetHeroBtn",
+    "paymentScheduleBtn",
+    "brochureHeroBtn",
+    "floorPlansBtn",
+    "scheduleVisitBtn",
+    "enquireNowBtn",
+    "downloadCostSheetBtn",
+    "formsubmitid",
+    "viewSkyBtn",
+    "viewMasterBtn",
+    "downBrchBtn",
+    "priceBtn1",
+    "priceBtn2",
+    "priceBtn3",
+    "priceBtn4",
+    "priceBtn5",
+    "priceBtn6",
+    "costSheetBtn",
+    "floorBtn1",
+    "floorBtn2",
+    "floorBtn3",
+    "liveSheetBtn",
+    "enquireBtn",
+    "scheduleModalCloseCalendly",
+    "costSheetModalClose",
+    "enquireModalClose",
+    "floorPlansCTABtn"
+  ];
+  ids.forEach(function(id) {
+    var btn = document.getElementById(id);
+    if (btn) {
+      btn.addEventListener("click", function() {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17560178559/T9LuCM3krPwbEP-erLVB'
+        });
+      });
+    }
+  });
+
+});
+</script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -262,7 +307,7 @@ function gtag_report_conversion(url) {
                             maxlength="10" class="form-input phone-input">
                     </div>
                     <p class="form-privacy">Your details are safe with us.</p>
-                    <button type="submit" class="btn-gold btn-submit">Pre-Register Now</button>
+                    <button type="submit" class="btn-gold btn-submit" id"formsubmitid">Pre-Register Now</button>
                 </form>
             </div>
         </section>
@@ -806,7 +851,7 @@ function gtag_report_conversion(url) {
     <!-- Modal: Schedule Visit -->
     <div class="modal" id="scheduleModal">
         <div class="modal-content">
-            <button class="modal-close" id="scheduleModalClose">&times;</button>
+            <button class="modal-close" id="scheduleModalCloseCalendly">&times;</button>
             <h3>Schedule Your Site Visit</h3>
             <form class="modal-form" id="scheduleForm">
                 <input type="text" placeholder="Name" required minlength="2">
