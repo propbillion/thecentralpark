@@ -57,6 +57,16 @@ body {
     padding-top: calc(var(--header-height) + var(--navbar-height));
     padding-bottom: var(--bottom-cta-height);
 }
+.logo-runwal{
+    text-align:center;
+}
+
+.partner-text{
+    font-size:10px;
+    line-height:1.2;
+    color:#444;
+    margin-top:2px;
+}
 
 img {
     max-width: 100%;
